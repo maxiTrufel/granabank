@@ -8,8 +8,9 @@ export default defineConfig({
     seed: "tsx prisma/seed.ts",
   },
   datasource: {
-    // process.env en vez de env(): env() falla si la variable no existe, y
-    // `prisma generate` (que corre en el build) no necesita la base.
-    url: process.env.DATABASE_URL ?? "",
+    // Las migraciones usan la conexión directa (sin pooler) cuando existe, como
+    // recomienda Neon. Usamos process.env en vez de env() porque env() falla si
+    // la variable no existe, y `prisma generate` no necesita la base.
+    url: process.env.DATABASE_URL_UNPOOLED ?? process.env.DATABASE_URL ?? "",
   },
 });

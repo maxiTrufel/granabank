@@ -57,14 +57,13 @@ La app queda en http://localhost:3000.
 | `npm run db:migrate` | Crea/aplica migraciones en desarrollo            |
 | `npm run db:deploy`  | Aplica las migraciones existentes (producción)   |
 | `npm run db:seed`    | Carga el usuario de prueba, tarjetas y movimientos |
+| `npm run vercel-build` | Build de Vercel: migra, carga el seed y buildea |
 
 ### Deploy
 
-La app se deploya en Vercel con una base Postgres administrada (por ejemplo, Neon). Pasos:
+Está deployado en Vercel, con la base en Neon conectada desde la integración de Vercel (que crea `DATABASE_URL` y `DATABASE_URL_UNPOOLED`). La única variable a mano es `SESSION_SECRET`.
 
-1. Crear la base y copiar el connection string.
-2. En Vercel, configurar `DATABASE_URL` y `SESSION_SECRET`.
-3. Correr una vez, apuntando a esa base: `npm run db:deploy && npm run db:seed`.
+En Vercel se corre el script `vercel-build`, que aplica las migraciones pendientes, carga el seed y después hace el build. El seed es idempotente, así que en cada deploy la cuenta demo vuelve a su estado inicial. En una app real el seed no correría en producción; acá es lo que permite que la demo funcione sin pasos manuales.
 
 ## Estructura
 
