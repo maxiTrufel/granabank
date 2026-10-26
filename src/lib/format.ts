@@ -25,10 +25,12 @@ export function formatExpiration(month: number, year: number) {
   return `${String(month).padStart(2, "0")}/${String(year).slice(-2)}`;
 }
 
-/** "lunes, 26 de octubre de 2026 · 14:30" */
+/** "lunes, 26 de octubre de 2026" */
 export function formatLongDate(iso: string) {
-  const date = new Date(iso);
-  const day = new Intl.DateTimeFormat("es-AR", { dateStyle: "full" }).format(date);
-  const time = new Intl.DateTimeFormat("es-AR", { timeStyle: "short" }).format(date);
-  return `${day} · ${time}`;
+  return new Intl.DateTimeFormat("es-AR", { dateStyle: "full" }).format(new Date(iso));
+}
+
+/** "14:30" */
+export function formatTime(iso: string) {
+  return new Intl.DateTimeFormat("es-AR", { hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(new Date(iso));
 }

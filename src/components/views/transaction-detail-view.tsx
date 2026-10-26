@@ -7,7 +7,7 @@ import { TransactionIcon } from "@/components/transactions/transaction-icon";
 import { BrandLogo } from "@/components/ui/brand-logo";
 import { EmptyState, ErrorState, Skeleton } from "@/components/ui/feedback";
 import { useApi } from "@/hooks/use-api";
-import { formatAmount, formatLongDate } from "@/lib/format";
+import { formatAmount, formatLongDate, formatTime } from "@/lib/format";
 import { TRANSACTION_TYPE_CONFIG } from "@/lib/transaction-types";
 import type { TransactionDetail } from "@/lib/types";
 
@@ -58,8 +58,9 @@ function Detail({ transaction }: { transaction: TransactionDetail }) {
 
       <dl className="divide-y divide-line rounded-3xl bg-white px-5 shadow-soft">
         <Row label="Fecha">
-          <span className="first-letter:uppercase">{formatLongDate(transaction.date)}</span>
+          <span className="block first-letter:uppercase">{formatLongDate(transaction.date)}</span>
         </Row>
+        <Row label="Hora">{formatTime(transaction.date)} hs</Row>
         <Row label="Tipo">{config.filterLabel}</Row>
         {transaction.description && <Row label="Descripción">{transaction.description}</Row>}
         {transaction.card && (
