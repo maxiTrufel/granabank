@@ -61,23 +61,25 @@ export const ChevronLeftIcon = (props: IconProps) => (
   </BaseIcon>
 );
 
+// Flechas rellenas de los movimientos, como en el Figma.
+
 export const ArrowDownIcon = (props: IconProps) => (
-  <BaseIcon strokeWidth={2.4} {...props}>
-    <path d="M12 5v13M7 13l5 5 5-5" />
-  </BaseIcon>
+  <svg width={24} height={24} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+    <path d="M9.6 3.5h4.8v8.3h4.8L12 20.5l-7.2-8.7h4.8z" />
+  </svg>
 );
 
 export const ArrowUpIcon = (props: IconProps) => (
-  <BaseIcon strokeWidth={2.4} {...props}>
-    <path d="M12 19V6M7 11l5-5 5 5" />
-  </BaseIcon>
+  <svg width={24} height={24} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+    <path d="M9.6 20.5h4.8v-8.3h4.8L12 3.5l-7.2 8.7h4.8z" />
+  </svg>
 );
 
 export const SwapIcon = (props: IconProps) => (
-  <BaseIcon strokeWidth={2.2} {...props}>
-    <path d="M9 4v11M5.5 11.5 9 15l3.5-3.5" />
-    <path d="M15 20V9M11.5 12.5 15 9l3.5 3.5" />
-  </BaseIcon>
+  <svg width={24} height={24} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+    <path d="M6.4 15.5h3.4v-6h3.6L8.1 2.5 2.8 9.5h3.6z" />
+    <path d="M14.2 8.5h3.4v6h3.6l-5.3 7-5.3-7h3.6z" />
+  </svg>
 );
 
 export const AlertIcon = (props: IconProps) => (

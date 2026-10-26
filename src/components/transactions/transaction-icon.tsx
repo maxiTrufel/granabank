@@ -15,8 +15,8 @@ interface TransactionIconProps {
 
 export function TransactionIcon({ type, size = "md" }: TransactionIconProps) {
   const Icon = ICONS[type];
-  const box = size === "lg" ? "size-16 rounded-2xl" : "size-10 rounded-lg";
-  const icon = size === "lg" ? "size-7" : "size-4";
+  const box = size === "lg" ? "size-16 rounded-2xl" : "size-11 rounded-[10px]";
+  const icon = size === "lg" ? "size-8" : "size-6";
 
   return (
     <span className={`flex shrink-0 items-center justify-center ${box} ${TRANSACTION_TYPE_CONFIG[type].iconClass}`}>
