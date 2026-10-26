@@ -4,7 +4,7 @@ import { TransactionItem } from "./transaction-item";
 
 export function TransactionList({ transactions }: { transactions: Transaction[] }) {
   return (
-    <ul className="space-y-3">
+    <ul className="space-y-4.5">
       {transactions.map((transaction) => (
         <li key={transaction.id}>
           <TransactionItem transaction={transaction} />
@@ -16,10 +16,10 @@ export function TransactionList({ transactions }: { transactions: Transaction[] 
 
 export function TransactionListSkeleton({ rows = 5 }: { rows?: number }) {
   return (
-    <ul className="space-y-3" aria-label="Cargando movimientos" aria-busy="true">
+    <ul className="space-y-4.5" aria-label="Cargando movimientos" aria-busy="true">
       {Array.from({ length: rows }, (_, index) => (
-        <li key={index} className="flex items-center gap-3 rounded-2xl bg-white p-3 shadow-soft">
-          <Skeleton className="size-10" />
+        <li key={index} className="flex h-[90px] items-center gap-4 rounded-[18px] bg-white px-4 shadow-soft">
+          <Skeleton className="size-11" />
           <div className="flex-1 space-y-2">
             <Skeleton className="h-3.5 w-28" />
             <Skeleton className="h-2.5 w-20" />

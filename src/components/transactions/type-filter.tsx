@@ -19,7 +19,7 @@ export function TypeFilter({ value, onChange }: TypeFilterProps) {
     <div
       role="group"
       aria-label="Filtrar por tipo de movimiento"
-      className="no-scrollbar -mx-6 flex gap-2 overflow-x-auto px-6 py-1"
+      className="no-scrollbar -mx-6 flex gap-2.5 overflow-x-auto px-6 py-1"
     >
       {OPTIONS.map((option) => {
         const active = option.value === value;
@@ -29,8 +29,8 @@ export function TypeFilter({ value, onChange }: TypeFilterProps) {
             type="button"
             aria-pressed={active}
             onClick={() => onChange(option.value)}
-            className={`shrink-0 rounded-full px-4 py-2 text-xs font-medium transition-colors ${
-              active ? "bg-granate text-white" : "bg-white text-ink shadow-soft hover:bg-granate-soft"
+            className={`h-10 shrink-0 rounded-[14px] px-5 text-sm font-medium transition-colors ${
+              active ? "bg-granate text-white" : "bg-white text-[#24272d] shadow-soft hover:bg-granate-soft"
             }`}
           >
             {option.label}

@@ -18,7 +18,7 @@ export function BackHeader({ title, fallbackHref }: BackHeaderProps) {
   }
 
   return (
-    <header className="flex items-center gap-3 pt-10 pb-6">
+    <header className="flex items-center gap-3 pt-6 pb-6">
       <button
         type="button"
         onClick={handleBack}

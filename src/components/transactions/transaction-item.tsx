@@ -10,14 +10,14 @@ export function TransactionItem({ transaction }: { transaction: Transaction }) {
   return (
     <Link
       href={`/movimientos/${transaction.id}`}
-      className="flex items-center gap-3 rounded-2xl bg-white p-3 shadow-soft transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-granate active:scale-[0.99]"
+      className="flex h-[90px] items-center gap-4 rounded-[18px] bg-white px-4 shadow-soft transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-granate active:scale-[0.99]"
     >
       <TransactionIcon type={transaction.type} />
       <div className="min-w-0 flex-1">
-        <p className="truncate text-sm text-ink">{transaction.counterparty}</p>
-        <p className="text-[11px] font-light text-muted">{config.label}</p>
+        <p className="truncate text-base text-ink-soft">{transaction.counterparty}</p>
+        <p className="text-xs text-muted">{config.label}</p>
       </div>
-      <span className={`text-xs font-medium ${config.amountClass}`}>{formatAmount(transaction.amount)}</span>
+      <span className={`pr-0.5 text-sm font-medium ${config.amountClass}`}>{formatAmount(transaction.amount)}</span>
     </Link>
   );
 }

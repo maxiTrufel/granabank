@@ -3,23 +3,27 @@
 @theme {
   --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
 
-  --color-granate: #6e272d;
-  --color-granate-dark: #561d22;
-  --color-granate-soft: #e9d8da;
-  --color-rose: #ecbcb8;
+  /* Colores tomados del Figma. */
+  --color-granate: #71252f;
+  --color-granate-dark: #5a1d26;
+  --color-granate-soft: #e2d2d5;
+  --color-rose: #e9b7b4;
 
-  --color-ink: #2d2d3a;
-  --color-muted: #a3a6b4;
+  --color-ink: #3f4551;
+  --color-ink-soft: #666c78;
+  --color-subtle: #737a84;
+  --color-muted: #a8a8a8;
+  --color-control: #dadada;
   --color-line: #ececf2;
-  --color-surface: #f8f9fb;
+  --color-surface: #f9fafc;
   --color-backdrop: #eceef3;
 
-  --color-violet: #a24fdb;
-  --color-violet-soft: #f2e8fc;
-  --color-orange: #f0a33f;
-  --color-orange-soft: #ffefd9;
+  --color-violet: #a848f0;
+  --color-violet-soft: #f0e2fb;
+  --color-orange: #e49d5f;
+  --color-orange-soft: #fdebd7;
 
-  --shadow-soft: 0 4px 24px rgb(45 45 58 / 0.06);
+  --shadow-soft: 0 4px 24px rgb(63 69 81 / 0.06);
 }
 
 body {

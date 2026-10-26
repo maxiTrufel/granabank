@@ -59,11 +59,11 @@ export function MovementsView() {
 
   return (
     <>
-      <header className="pt-10 pb-5">
-        <h1 className="text-lg font-medium">Movimientos</h1>
+      <header className="pt-6 pb-6">
+        <h1 className="text-xl font-medium">Movimientos</h1>
       </header>
 
-      <div className="mb-6 space-y-4">
+      <div className="mb-8 space-y-4">
         <SearchInput value={search} onChange={setSearch} autoFocus={searchParams.has("buscar")} />
         <TypeFilter value={type} onChange={(tipo) => updateUrl({ tipo })} />
       </div>

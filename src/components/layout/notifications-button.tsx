@@ -34,7 +34,7 @@ export function NotificationsButton() {
         onClick={() => setOpen((value) => !value)}
         className="flex size-9 items-center justify-center rounded-full text-ink transition-colors hover:bg-white"
       >
-        <BellIcon className="size-5" />
+        <BellIcon className="size-[22px]" />
       </button>
       {open && (
         <div

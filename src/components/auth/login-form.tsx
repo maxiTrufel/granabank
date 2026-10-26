@@ -45,7 +45,7 @@ export function LoginForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="flex flex-1 flex-col">
-      <div className="space-y-5">
+      <div className="space-y-7">
         <Field
           id="email"
           label="Email"
@@ -66,28 +66,42 @@ export function LoginForm() {
           error={errors.password}
           onChange={(value) => update("password", value)}
         />
+      </div>
 
-        <label className="flex w-fit cursor-pointer items-center gap-2 text-xs text-muted">
+      <label className="mt-4 flex w-fit cursor-pointer items-center gap-2 text-[13px] text-muted">
+        <span className="relative flex">
           <input
             type="checkbox"
             checked={values.remember}
             onChange={(event) => update("remember", event.target.checked)}
-            className="size-4 cursor-pointer rounded accent-granate"
+            className="peer size-[18px] cursor-pointer appearance-none rounded-[4px] bg-control transition-colors checked:bg-granate focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-granate"
           />
-          Recordarme
-        </label>
+          <svg
+            viewBox="0 0 12 12"
+            fill="none"
+            stroke="white"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 m-auto hidden size-3 peer-checked:block"
+          >
+            <path d="M2.5 6.5 5 9l4.5-6" />
+          </svg>
+        </span>
+        Recordarme
+      </label>
 
-        {formError && (
-          <p role="alert" className="rounded-xl bg-granate-soft px-4 py-3 text-sm text-granate">
-            {formError}
-          </p>
-        )}
-      </div>
+      {formError && (
+        <p role="alert" className="mt-5 rounded-xl bg-granate-soft px-4 py-3 text-sm text-granate">
+          {formError}
+        </p>
+      )}
 
       <button
         type="submit"
         disabled={submitting}
-        className="mt-auto flex h-14 w-full items-center justify-center gap-2 rounded-2xl bg-granate font-medium text-white transition-colors hover:bg-granate-dark disabled:cursor-not-allowed disabled:opacity-80"
+        className="mt-auto flex h-[60px] w-full items-center justify-center gap-2 rounded-[14px] bg-granate font-semibold text-white transition-colors hover:bg-granate-dark disabled:cursor-not-allowed disabled:opacity-80"
       >
         {submitting && <SpinnerIcon className="size-5 animate-spin" />}
         {submitting ? "Ingresando..." : "Ingresar"}
@@ -112,7 +126,7 @@ function Field({ id, label, error, onChange, ...inputProps }: FieldProps) {
 
   return (
     <div>
-      <label htmlFor={id} className="mb-2 block text-sm text-ink">
+      <label htmlFor={id} className="mb-3 block text-base font-medium text-ink">
         {label}
       </label>
       <input
@@ -121,7 +135,7 @@ function Field({ id, label, error, onChange, ...inputProps }: FieldProps) {
         onChange={(event) => onChange(event.target.value)}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? errorId : undefined}
-        className={`h-12 w-full rounded-xl bg-white px-4 text-sm text-ink shadow-soft outline-none ring-1 transition-shadow placeholder:text-xs placeholder:text-muted focus:ring-2 ${
+        className={`h-[53px] w-full rounded-[10px] bg-white px-4 text-sm text-ink shadow-soft outline-none ring-1 transition-shadow placeholder:text-sm placeholder:text-muted focus:ring-2 ${
           error ? "ring-granate" : "ring-transparent focus:ring-granate/30"
         }`}
         {...inputProps}

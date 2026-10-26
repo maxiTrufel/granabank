@@ -38,7 +38,7 @@ export function BottomNavBar({ pathname }: { pathname: string | null }) {
   return (
     <nav
       aria-label="Navegación principal"
-      className="sticky bottom-0 z-10 flex items-center justify-around rounded-t-3xl bg-white px-6 pb-[max(env(safe-area-inset-bottom),0.75rem)] pt-3 shadow-[0_-4px_24px_rgb(45_45_58/0.06)]"
+      className="sticky bottom-0 z-10 flex items-center justify-around rounded-t-[30px] bg-white px-6 pt-5 pb-[max(env(safe-area-inset-bottom),1.25rem)] shadow-[0_-4px_24px_rgb(63_69_81/0.06)]"
     >
       {LINKS.map(({ href, label, icon: Icon }) => {
         const active = pathname === href || Boolean(pathname?.startsWith(`${href}/`));
@@ -50,7 +50,7 @@ export function BottomNavBar({ pathname }: { pathname: string | null }) {
             aria-current={active ? "page" : undefined}
             className={`${itemClass} ${active ? "text-granate" : "text-ink"}`}
           >
-            <Icon className="size-6" />
+            <Icon className="size-8" />
           </Link>
         );
       })}
@@ -61,7 +61,7 @@ export function BottomNavBar({ pathname }: { pathname: string | null }) {
         aria-label="Cerrar sesión"
         className={`${itemClass} text-ink disabled:opacity-60`}
       >
-        {loggingOut ? <SpinnerIcon className="size-6 animate-spin" /> : <LogoutIcon className="size-6" />}
+        {loggingOut ? <SpinnerIcon className="size-8 animate-spin" /> : <LogoutIcon className="size-8" />}
       </button>
     </nav>
   );
