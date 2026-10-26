@@ -108,6 +108,8 @@ src/
 
 **Montos como `Decimal`.** En la base los montos son `Decimal(12, 2)` para no arrastrar errores de punto flotante. Se pasan a `number` recién al serializar la respuesta.
 
+**Fidelidad al diseño.** Los colores, la tipografía (Poppins), las medidas, los íconos de cada tipo de movimiento y los logos de Mastercard y Visa salen del Figma, y comparé cada pantalla contra el diseño a la misma escala. La única diferencia a propósito es "Débito Aut." con tilde.
+
 **Pantalla de detalle.** El Figma no incluye el detalle de un movimiento, así que lo diseñé siguiendo el mismo lenguaje visual (cards blancas, íconos y colores por tipo de movimiento).
 
 **Mobile first.** El diseño es de una app mobile. En desktop la app se muestra centrada con el ancho de un teléfono, en vez de estirar un layout que no fue pensado para pantallas anchas.
