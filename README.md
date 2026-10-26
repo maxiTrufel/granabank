@@ -2,7 +2,7 @@
 
 Web app de home banking para socios del club: login, resumen de tarjetas, últimos movimientos, listado con búsqueda y filtros, y detalle de cada movimiento. Implementada a partir del diseño de Figma del challenge.
 
-**Demo:** _(link de Vercel)_
+**Demo:** https://granabank-nine.vercel.app
 
 Usuario de prueba:
 
